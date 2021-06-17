@@ -1,0 +1,23 @@
+package emojiflags
+
+const (
+    {{range .Countries}}{{format .Name}}Code = "{{.Alpha2Code}}"
+    {{end}}
+    {{range .SpecialCountries}}{{format .Name}}Code = "{{.Code}}"
+    {{end}}
+)
+
+var Alpha2CodeMap = map[string]string {
+    {{range .Countries}}"{{.Alpha2Code}}": "{{.Alpha2Code}}",
+    {{end}}
+}
+
+var Alpha3CodeMap = map[string]string {
+    {{range .Countries}}"{{.Alpha3Code}}": "{{.Alpha2Code}}",
+    {{end}}
+}
+
+var SpecialCountryMap = map[string]string{
+	{{range .SpecialCountries}}"{{.Code}}": "{{.Code}}",
+    {{end}}
+}
