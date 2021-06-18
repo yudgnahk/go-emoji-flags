@@ -2,6 +2,7 @@ package emojiflags
 
 import (
 	"testing"
+	"unicode"
 	"unicode/utf8"
 )
 
@@ -17,12 +18,12 @@ func Test_getFlag(t *testing.T) {
 		{
 			"Should handle correct 3 characters input",
 			args{"VNM"},
-			28,
+			7,
 		},
 		{
 			"Should handle correct 2 characters input",
 			args{"VN"},
-			28,
+			7,
 		},
 		{
 			"Should return empty string if no 3 letters code found",
@@ -37,12 +38,12 @@ func Test_getFlag(t *testing.T) {
 		{
 			"Should uppercase input",
 			args{"vnm"},
-			28,
+			7,
 		},
 		{
 			"Could get England emoji",
 			args{"GB-ENG"},
-			28,
+			7,
 		},
 	}
 	for _, tt := range tests {
@@ -51,9 +52,20 @@ func Test_getFlag(t *testing.T) {
 			if !utf8.ValidString(got) {
 				t.Errorf("GetFlag() expected valid flag got %v", got)
 			}
-			if len(got) != tt.expectedLen {
-				t.Errorf("expected length emoji of %v got %v", tt.expectedLen, len(got))
+			if GetPrintableLength(got) != tt.expectedLen {
+				t.Errorf("expected length emoji of %v got %v", tt.expectedLen, GetPrintableLength(got))
 			}
 		})
 	}
+}
+
+func GetPrintableLength(s string) int {
+	res := 0
+	for i := range s {
+		if unicode.IsPrint(rune(s[i])) {
+			res++
+		}
+	}
+
+	return res
 }

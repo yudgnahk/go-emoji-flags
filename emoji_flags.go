@@ -33,6 +33,11 @@ func GetFlag(countryCode string) string {
 	return ""
 }
 
+// format ...
+// i need to format those standard emojis to fit the visible length of the special ones
+// it needs a space and 4 invisible characters
+// because standard emoji does not have space and its length is 2
+// and special emoji length is 7
 func format(emoji string) string {
-	return fmt.Sprintf("%s \u180E\u00AD\u00AD\u00AD\u00AD\u00AD\u00AD\u00AD\u00AD", emoji)
+	return fmt.Sprintf("%s \u00AD\u00AD\u00AD\u00AD", emoji)
 }
