@@ -24,14 +24,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: generate country_map.go
-
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-go@v2
-        with:
-          go-version: '^1.16' # The Go version to download (if necessary) and use.
       - name: Run Tests
         run: go test -v -count=1 -race $(go list ./...)
