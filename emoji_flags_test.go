@@ -17,12 +17,12 @@ func Test_getFlag(t *testing.T) {
 		{
 			"Should handle correct 3 characters input",
 			args{"VNM"},
-			8,
+			28,
 		},
 		{
 			"Should handle correct 2 characters input",
 			args{"VN"},
-			8,
+			28,
 		},
 		{
 			"Should return empty string if no 3 letters code found",
@@ -37,12 +37,12 @@ func Test_getFlag(t *testing.T) {
 		{
 			"Should uppercase input",
 			args{"vnm"},
-			8,
+			28,
 		},
 		{
 			"Could get England emoji",
 			args{"GB-ENG"},
-			28, // special emoji
+			28,
 		},
 	}
 	for _, tt := range tests {
