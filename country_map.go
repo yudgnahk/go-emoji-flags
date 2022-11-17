@@ -1,774 +1,1177 @@
 package emojiflags
 
 const (
-    AfghanistanCode = "AF"
-    ÅlandIslandsCode = "AX"
-    AlbaniaCode = "AL"
-    AlgeriaCode = "DZ"
-    AmericanSamoaCode = "AS"
-    AndorraCode = "AD"
-    AngolaCode = "AO"
-    AnguillaCode = "AI"
-    AntarcticaCode = "AQ"
-    AntiguaAndBarbudaCode = "AG"
-    ArgentinaCode = "AR"
-    ArmeniaCode = "AM"
-    ArubaCode = "AW"
-    AustraliaCode = "AU"
-    AustriaCode = "AT"
-    AzerbaijanCode = "AZ"
-    BahamasCode = "BS"
-    BahrainCode = "BH"
-    BangladeshCode = "BD"
-    BarbadosCode = "BB"
-    BelarusCode = "BY"
-    BelgiumCode = "BE"
-    BelizeCode = "BZ"
-    BeninCode = "BJ"
-    BermudaCode = "BM"
-    BhutanCode = "BT"
-    BoliviaPlurinationalStateOfCode = "BO"
-    BonairCode = "BQ"
-    BosniaAndHerzegovinaCode = "BA"
-    BotswanaCode = "BW"
-    BouvetIslandCode = "BV"
-    BrazilCode = "BR"
-    BritishIndianOceanTerritoryCode = "IO"
-    UnitedStatesMinorOutlyingIslandsCode = "UM"
-    VirginIslandsBritishCode = "VG"
-    VirginIslandsUSCode = "VI"
-    BruneiDarussalamCode = "BN"
-    BulgariaCode = "BG"
-    BurkinaFasoCode = "BF"
-    BurundiCode = "BI"
-    CambodiaCode = "KH"
-    CameroonCode = "CM"
-    CanadaCode = "CA"
-    CaboVerdeCode = "CV"
-    CaymanIslandsCode = "KY"
-    CentralAfricanRepublicCode = "CF"
-    ChadCode = "TD"
-    ChileCode = "CL"
-    ChinaCode = "CN"
-    ChristmasIslandCode = "CX"
-    CocosKeelingIslandsCode = "CC"
-    ColombiaCode = "CO"
-    ComorosCode = "KM"
-    CongoCode = "CG"
-    CongoDemocraticRepublicOfTheCode = "CD"
-    CookIslandsCode = "CK"
-    CostaRicaCode = "CR"
-    CroatiaCode = "HR"
-    CubaCode = "CU"
-    CuraçaoCode = "CW"
-    CyprusCode = "CY"
-    CzechRepublicCode = "CZ"
-    DenmarkCode = "DK"
-    DjiboutiCode = "DJ"
-    DominicaCode = "DM"
-    DominicanRepublicCode = "DO"
-    EcuadorCode = "EC"
-    EgyptCode = "EG"
-    ElSalvadorCode = "SV"
-    EquatorialGuineaCode = "GQ"
-    EritreaCode = "ER"
-    EstoniaCode = "EE"
-    EthiopiaCode = "ET"
-    FalklandIslandsMalvinasCode = "FK"
-    FaroeIslandsCode = "FO"
-    FijiCode = "FJ"
-    FinlandCode = "FI"
-    FranceCode = "FR"
-    FrenchGuianaCode = "GF"
-    FrenchPolynesiaCode = "PF"
-    FrenchSouthernTerritoriesCode = "TF"
-    GabonCode = "GA"
-    GambiaCode = "GM"
-    GeorgiaCode = "GE"
-    GermanyCode = "DE"
-    GhanaCode = "GH"
-    GibraltarCode = "GI"
-    GreeceCode = "GR"
-    GreenlandCode = "GL"
-    GrenadaCode = "GD"
-    GuadeloupeCode = "GP"
-    GuamCode = "GU"
-    GuatemalaCode = "GT"
-    GuernseyCode = "GG"
-    GuineaCode = "GN"
-    GuineaBissauCode = "GW"
-    GuyanaCode = "GY"
-    HaitiCode = "HT"
-    HeardIslandAndMcdonaldIslandsCode = "HM"
-    HolySeeCode = "VA"
-    HondurasCode = "HN"
-    HongKongCode = "HK"
-    HungaryCode = "HU"
-    IcelandCode = "IS"
-    IndiaCode = "IN"
-    IndonesiaCode = "ID"
-    CôteDIvoireCode = "CI"
-    IranIslamicRepublicOfCode = "IR"
-    IraqCode = "IQ"
-    IrelandCode = "IE"
-    IsleOfManCode = "IM"
-    IsraelCode = "IL"
-    ItalyCode = "IT"
-    JamaicaCode = "JM"
-    JapanCode = "JP"
-    JerseyCode = "JE"
-    JordanCode = "JO"
-    KazakhstanCode = "KZ"
-    KenyaCode = "KE"
-    KiribatiCode = "KI"
-    KuwaitCode = "KW"
-    KyrgyzstanCode = "KG"
-    LaoPeopleSDemocraticRepublicCode = "LA"
-    LatviaCode = "LV"
-    LebanonCode = "LB"
-    LesothoCode = "LS"
-    LiberiaCode = "LR"
-    LibyaCode = "LY"
-    LiechtensteinCode = "LI"
-    LithuaniaCode = "LT"
-    LuxembourgCode = "LU"
-    MacaoCode = "MO"
-    MacedoniaTheFormerYugoslavRepublicOfCode = "MK"
-    MadagascarCode = "MG"
-    MalawiCode = "MW"
-    MalaysiaCode = "MY"
-    MaldivesCode = "MV"
-    MaliCode = "ML"
-    MaltaCode = "MT"
-    MarshallIslandsCode = "MH"
-    MartiniqueCode = "MQ"
-    MauritaniaCode = "MR"
-    MauritiusCode = "MU"
-    MayotteCode = "YT"
-    MexicoCode = "MX"
-    MicronesiaFederatedStatesOfCode = "FM"
-    MoldovaRepublicOfCode = "MD"
-    MonacoCode = "MC"
-    MongoliaCode = "MN"
-    MontenegroCode = "ME"
-    MontserratCode = "MS"
-    MoroccoCode = "MA"
-    MozambiqueCode = "MZ"
-    MyanmarCode = "MM"
-    NamibiaCode = "NA"
-    NauruCode = "NR"
-    NepalCode = "NP"
-    NetherlandsCode = "NL"
-    NewCaledoniaCode = "NC"
-    NewZealandCode = "NZ"
-    NicaraguaCode = "NI"
-    NigerCode = "NE"
-    NigeriaCode = "NG"
-    NiueCode = "NU"
-    NorfolkIslandCode = "NF"
-    KoreaDemocraticPeopleSRepublicOfCode = "KP"
-    NorthernMarianaIslandsCode = "MP"
-    NorwayCode = "NO"
-    OmanCode = "OM"
-    PakistanCode = "PK"
-    PalauCode = "PW"
-    PalestinCode = "PS"
-    PanamaCode = "PA"
-    PapuaNewGuineaCode = "PG"
-    ParaguayCode = "PY"
-    PeruCode = "PE"
-    PhilippinesCode = "PH"
-    PitcairnCode = "PN"
-    PolandCode = "PL"
-    PortugalCode = "PT"
-    PuertoRicoCode = "PR"
-    QatarCode = "QA"
-    RepublicOfKosovoCode = "XK"
-    RéunionCode = "RE"
-    RomaniaCode = "RO"
-    RussianFederationCode = "RU"
-    RwandaCode = "RW"
-    SaintBarthélemyCode = "BL"
-    SaintHelenCode = "SH"
-    SaintKittsAndNevisCode = "KN"
-    SaintLuciaCode = "LC"
-    SaintMartinFrenchPartCode = "MF"
-    SaintPierreAndMiquelonCode = "PM"
-    SaintVincentAndTheGrenadinesCode = "VC"
-    SamoaCode = "WS"
-    SanMarinoCode = "SM"
-    SaoTomeAndPrincipeCode = "ST"
-    SaudiArabiaCode = "SA"
-    SenegalCode = "SN"
-    SerbiaCode = "RS"
-    SeychellesCode = "SC"
-    SierraLeoneCode = "SL"
-    SingaporeCode = "SG"
-    SintMaartenDutchPartCode = "SX"
-    SlovakiaCode = "SK"
-    SloveniaCode = "SI"
-    SolomonIslandsCode = "SB"
-    SomaliaCode = "SO"
-    SouthAfricaCode = "ZA"
-    SouthGeorgiaAndTheSouthSandwichIslandsCode = "GS"
-    KoreaRepublicOfCode = "KR"
-    SouthSudanCode = "SS"
-    SpainCode = "ES"
-    SriLankaCode = "LK"
-    SudanCode = "SD"
-    SurinameCode = "SR"
-    SvalbardAndJanMayenCode = "SJ"
-    SwazilandCode = "SZ"
-    SwedenCode = "SE"
-    SwitzerlandCode = "CH"
-    SyrianArabRepublicCode = "SY"
-    TaiwanCode = "TW"
-    TajikistanCode = "TJ"
-    TanzaniCode = "TZ"
-    ThailandCode = "TH"
-    TimorLesteCode = "TL"
-    TogoCode = "TG"
-    TokelauCode = "TK"
-    TongaCode = "TO"
-    TrinidadAndTobagoCode = "TT"
-    TunisiaCode = "TN"
-    TurkeyCode = "TR"
-    TurkmenistanCode = "TM"
-    TurksAndCaicosIslandsCode = "TC"
-    TuvaluCode = "TV"
-    UgandaCode = "UG"
-    UkraineCode = "UA"
-    UnitedArabEmiratesCode = "AE"
-    UnitedKingdomOfGreatBritainAndNorthernIrelandCode = "GB"
-    UnitedStatesOfAmericaCode = "US"
-    UruguayCode = "UY"
-    UzbekistanCode = "UZ"
-    VanuatuCode = "VU"
-    VenezuelaBolivarianRepublicOfCode = "VE"
-    VietNamCode = "VN"
-    WallisAndFutunaCode = "WF"
-    WesternSaharaCode = "EH"
-    YemenCode = "YE"
-    ZambiaCode = "ZM"
-    ZimbabweCode = "ZW"
-    
-    EnglandCode = "GB-ENG"
-    ScotlandCode = "GB-SCT"
-    WalesCode = "GB-WLS"
-    
+	MauritaniaCode                       = "MR"
+	ArubaCode                            = "AW"
+	ArgentinaCode                        = "AR"
+	SwedenCode                           = "SE"
+	MaldivesCode                         = "MV"
+	MexicoCode                           = "MX"
+	NewZealandCode                       = "NZ"
+	EcuadorCode                          = "EC"
+	WallisAndFutunaCode                  = "WF"
+	ÅlandIslandsCode                     = "AX"
+	MontenegroCode                       = "ME"
+	PakistanCode                         = "PK"
+	PitcairnIslandsCode                  = "PN"
+	ZambiaCode                           = "ZM"
+	SeychellesCode                       = "SC"
+	MalaysiaCode                         = "MY"
+	NorwayCode                           = "NO"
+	UzbekistanCode                       = "UZ"
+	VanuatuCode                          = "VU"
+	FrenchSouthernAndAntarcticLandsCode  = "TF"
+	ChristmasIslandCode                  = "CX"
+	SingaporeCode                        = "SG"
+	SurinameCode                         = "SR"
+	WesternSaharaCode                    = "EH"
+	SaintMartinCode                      = "MF"
+	CostaRicaCode                        = "CR"
+	HeardIslandAndMcdonaldIslandsCode    = "HM"
+	IrelandCode                          = "IE"
+	AntarcticaCode                       = "AQ"
+	AustraliaCode                        = "AU"
+	LibyaCode                            = "LY"
+	QatarCode                            = "QA"
+	GreenlandCode                        = "GL"
+	MauritiusCode                        = "MU"
+	KazakhstanCode                       = "KZ"
+	BritishIndianOceanTerritoryCode      = "IO"
+	AlbaniaCode                          = "AL"
+	BahrainCode                          = "BH"
+	PapuaNewGuineaCode                   = "PG"
+	BurundiCode                          = "BI"
+	IndiaCode                            = "IN"
+	UruguayCode                          = "UY"
+	SaintLuciaCode                       = "LC"
+	BarbadosCode                         = "BB"
+	NewCaledoniaCode                     = "NC"
+	LatviaCode                           = "LV"
+	EstoniaCode                          = "EE"
+	NiueCode                             = "NU"
+	SaintBarthélemyCode                  = "BL"
+	PuertoRicoCode                       = "PR"
+	GrenadaCode                          = "GD"
+	MacauCode                            = "MO"
+	CyprusCode                           = "CY"
+	IsleOfManCode                        = "IM"
+	GreeceCode                           = "GR"
+	SyriaCode                            = "SY"
+	LithuaniaCode                        = "LT"
+	CuraçaoCode                          = "CW"
+	DominicaCode                         = "DM"
+	NigerCode                            = "NE"
+	KyrgyzstanCode                       = "KG"
+	TrinidadAndTobagoCode                = "TT"
+	TogoCode                             = "TG"
+	PalestineCode                        = "PS"
+	MadagascarCode                       = "MG"
+	CroatiaCode                          = "HR"
+	FaroeIslandsCode                     = "FO"
+	HaitiCode                            = "HT"
+	MontserratCode                       = "MS"
+	CookIslandsCode                      = "CK"
+	TimorLesteCode                       = "TL"
+	MartiniqueCode                       = "MQ"
+	CubaCode                             = "CU"
+	TaiwanCode                           = "TW"
+	EswatiniCode                         = "SZ"
+	UkraineCode                          = "UA"
+	BermudaCode                          = "BM"
+	SouthKoreaCode                       = "KR"
+	PeruCode                             = "PE"
+	IraqCode                             = "IQ"
+	MoldovaCode                          = "MD"
+	SanMarinoCode                        = "SM"
+	VenezuelaCode                        = "VE"
+	GuyanaCode                           = "GY"
+	CaymanIslandsCode                    = "KY"
+	CambodiaCode                         = "KH"
+	CocosKeelingIslandsCode              = "CC"
+	MaltaCode                            = "MT"
+	SriLankaCode                         = "LK"
+	IsraelCode                           = "IL"
+	SudanCode                            = "SD"
+	UnitedStatesVirginIslandsCode        = "VI"
+	EritreaCode                          = "ER"
+	MaliCode                             = "ML"
+	SomaliaCode                          = "SO"
+	NorfolkIslandCode                    = "NF"
+	ComorosCode                          = "KM"
+	NicaraguaCode                        = "NI"
+	RussiaCode                           = "RU"
+	UgandaCode                           = "UG"
+	NauruCode                            = "NR"
+	SwitzerlandCode                      = "CH"
+	PortugalCode                         = "PT"
+	TajikistanCode                       = "TJ"
+	SouthSudanCode                       = "SS"
+	BouvetIslandCode                     = "BV"
+	MicronesiaCode                       = "FM"
+	AmericanSamoaCode                    = "AS"
+	CzechiaCode                          = "CZ"
+	BotswanaCode                         = "BW"
+	TunisiaCode                          = "TN"
+	AnguillaCode                         = "AI"
+	GuineaBissauCode                     = "GW"
+	SlovakiaCode                         = "SK"
+	MarshallIslandsCode                  = "MH"
+	AlgeriaCode                          = "DZ"
+	JamaicaCode                          = "JM"
+	MozambiqueCode                       = "MZ"
+	SpainCode                            = "ES"
+	HondurasCode                         = "HN"
+	NetherlandsCode                      = "NL"
+	SouthAfricaCode                      = "ZA"
+	AzerbaijanCode                       = "AZ"
+	NorthMacedoniaCode                   = "MK"
+	GambiaCode                           = "GM"
+	LiberiaCode                          = "LR"
+	LuxembourgCode                       = "LU"
+	CapeVerdeCode                        = "CV"
+	BahamasCode                          = "BS"
+	GeorgiaCode                          = "GE"
+	KiribatiCode                         = "KI"
+	TanzaniaCode                         = "TZ"
+	ChinaCode                            = "CN"
+	GuatemalaCode                        = "GT"
+	SãoToméAndPríncipeCode               = "ST"
+	GermanyCode                          = "DE"
+	SierraLeoneCode                      = "SL"
+	ChadCode                             = "TD"
+	UnitedKingdomCode                    = "GB"
+	SloveniaCode                         = "SI"
+	ThailandCode                         = "TH"
+	IndonesiaCode                        = "ID"
+	NorthernMarianaIslandsCode           = "MP"
+	GuamCode                             = "GU"
+	FinlandCode                          = "FI"
+	MayotteCode                          = "YT"
+	GibraltarCode                        = "GI"
+	TurkmenistanCode                     = "TM"
+	KosovoCode                           = "XK"
+	IvoryCoastCode                       = "CI"
+	MoroccoCode                          = "MA"
+	DominicanRepublicCode                = "DO"
+	GhanaCode                            = "GH"
+	VaticanCityCode                      = "VA"
+	JerseyCode                           = "JE"
+	TurkeyCode                           = "TR"
+	TuvaluCode                           = "TV"
+	IranCode                             = "IR"
+	EgyptCode                            = "EG"
+	DenmarkCode                          = "DK"
+	KenyaCode                            = "KE"
+	BulgariaCode                         = "BG"
+	ZimbabweCode                         = "ZW"
+	AngolaCode                           = "AO"
+	NigeriaCode                          = "NG"
+	PolandCode                           = "PL"
+	SenegalCode                          = "SN"
+	SaintHelenCode                       = "SH"
+	LebanonCode                          = "LB"
+	SamoaCode                            = "WS"
+	PhilippinesCode                      = "PH"
+	GuernseyCode                         = "GG"
+	ElSalvadorCode                       = "SV"
+	KuwaitCode                           = "KW"
+	TongaCode                            = "TO"
+	OmanCode                             = "OM"
+	AfghanistanCode                      = "AF"
+	SaintKittsAndNevisCode               = "KN"
+	CentralAfricanRepublicCode           = "CF"
+	SerbiaCode                           = "RS"
+	ArmeniaCode                          = "AM"
+	BangladeshCode                       = "BD"
+	LaosCode                             = "LA"
+	ChileCode                            = "CL"
+	FrenchPolynesiaCode                  = "PF"
+	PanamaCode                           = "PA"
+	UnitedStatesCode                     = "US"
+	NepalCode                            = "NP"
+	MyanmarCode                          = "MM"
+	FalklandIslandsCode                  = "FK"
+	HungaryCode                          = "HU"
+	PalauCode                            = "PW"
+	EquatorialGuineaCode                 = "GQ"
+	GuineaCode                           = "GN"
+	UnitedArabEmiratesCode               = "AE"
+	TurksAndCaicosIslandsCode            = "TC"
+	BritishVirginIslandsCode             = "VG"
+	LiechtensteinCode                    = "LI"
+	BosniaAndHerzegovinaCode             = "BA"
+	MalawiCode                           = "MW"
+	BhutanCode                           = "BT"
+	CameroonCode                         = "CM"
+	AndorraCode                          = "AD"
+	GuadeloupeCode                       = "GP"
+	RepublicOfTheCongoCode               = "CG"
+	RéunionCode                          = "RE"
+	BurkinaFasoCode                      = "BF"
+	JordanCode                           = "JO"
+	DrCongoCode                          = "CD"
+	TokelauCode                          = "TK"
+	VietnamCode                          = "VN"
+	SintMaartenCode                      = "SX"
+	BelgiumCode                          = "BE"
+	UnitedStatesMinorOutlyingIslandsCode = "UM"
+	BrazilCode                           = "BR"
+	BelizeCode                           = "BZ"
+	AntiguaAndBarbudaCode                = "AG"
+	ParaguayCode                         = "PY"
+	BeninCode                            = "BJ"
+	BruneiCode                           = "BN"
+	BoliviaCode                          = "BO"
+	DjiboutiCode                         = "DJ"
+	FrenchGuianaCode                     = "GF"
+	CanadaCode                           = "CA"
+	SaintPierreAndMiquelonCode           = "PM"
+	JapanCode                            = "JP"
+	RwandaCode                           = "RW"
+	SaintVincentAndTheGrenadinesCode     = "VC"
+	IcelandCode                          = "IS"
+	BelarusCode                          = "BY"
+	HongKongCode                         = "HK"
+	LesothoCode                          = "LS"
+	FijiCode                             = "FJ"
+	AustriaCode                          = "AT"
+	ColombiaCode                         = "CO"
+	GabonCode                            = "GA"
+	SaudiArabiaCode                      = "SA"
+	SouthGeorgiaCode                     = "GS"
+	EthiopiaCode                         = "ET"
+	CaribbeanNetherlandsCode             = "BQ"
+	MonacoCode                           = "MC"
+	NorthKoreaCode                       = "KP"
+	ItalyCode                            = "IT"
+	NamibiaCode                          = "NA"
+	MongoliaCode                         = "MN"
+	SolomonIslandsCode                   = "SB"
+	YemenCode                            = "YE"
+	RomaniaCode                          = "RO"
+	SvalbardAndJanMayenCode              = "SJ"
+	FranceCode                           = "FR"
+
+	EnglandCode  = "GB-ENG"
+	ScotlandCode = "GB-SCT"
+	WalesCode    = "GB-WLS"
 )
 
-var Alpha2CodeMap = map[string]string {
-    "AF": "AF",
-    "AX": "AX",
-    "AL": "AL",
-    "DZ": "DZ",
-    "AS": "AS",
-    "AD": "AD",
-    "AO": "AO",
-    "AI": "AI",
-    "AQ": "AQ",
-    "AG": "AG",
-    "AR": "AR",
-    "AM": "AM",
-    "AW": "AW",
-    "AU": "AU",
-    "AT": "AT",
-    "AZ": "AZ",
-    "BS": "BS",
-    "BH": "BH",
-    "BD": "BD",
-    "BB": "BB",
-    "BY": "BY",
-    "BE": "BE",
-    "BZ": "BZ",
-    "BJ": "BJ",
-    "BM": "BM",
-    "BT": "BT",
-    "BO": "BO",
-    "BQ": "BQ",
-    "BA": "BA",
-    "BW": "BW",
-    "BV": "BV",
-    "BR": "BR",
-    "IO": "IO",
-    "UM": "UM",
-    "VG": "VG",
-    "VI": "VI",
-    "BN": "BN",
-    "BG": "BG",
-    "BF": "BF",
-    "BI": "BI",
-    "KH": "KH",
-    "CM": "CM",
-    "CA": "CA",
-    "CV": "CV",
-    "KY": "KY",
-    "CF": "CF",
-    "TD": "TD",
-    "CL": "CL",
-    "CN": "CN",
-    "CX": "CX",
-    "CC": "CC",
-    "CO": "CO",
-    "KM": "KM",
-    "CG": "CG",
-    "CD": "CD",
-    "CK": "CK",
-    "CR": "CR",
-    "HR": "HR",
-    "CU": "CU",
-    "CW": "CW",
-    "CY": "CY",
-    "CZ": "CZ",
-    "DK": "DK",
-    "DJ": "DJ",
-    "DM": "DM",
-    "DO": "DO",
-    "EC": "EC",
-    "EG": "EG",
-    "SV": "SV",
-    "GQ": "GQ",
-    "ER": "ER",
-    "EE": "EE",
-    "ET": "ET",
-    "FK": "FK",
-    "FO": "FO",
-    "FJ": "FJ",
-    "FI": "FI",
-    "FR": "FR",
-    "GF": "GF",
-    "PF": "PF",
-    "TF": "TF",
-    "GA": "GA",
-    "GM": "GM",
-    "GE": "GE",
-    "DE": "DE",
-    "GH": "GH",
-    "GI": "GI",
-    "GR": "GR",
-    "GL": "GL",
-    "GD": "GD",
-    "GP": "GP",
-    "GU": "GU",
-    "GT": "GT",
-    "GG": "GG",
-    "GN": "GN",
-    "GW": "GW",
-    "GY": "GY",
-    "HT": "HT",
-    "HM": "HM",
-    "VA": "VA",
-    "HN": "HN",
-    "HK": "HK",
-    "HU": "HU",
-    "IS": "IS",
-    "IN": "IN",
-    "ID": "ID",
-    "CI": "CI",
-    "IR": "IR",
-    "IQ": "IQ",
-    "IE": "IE",
-    "IM": "IM",
-    "IL": "IL",
-    "IT": "IT",
-    "JM": "JM",
-    "JP": "JP",
-    "JE": "JE",
-    "JO": "JO",
-    "KZ": "KZ",
-    "KE": "KE",
-    "KI": "KI",
-    "KW": "KW",
-    "KG": "KG",
-    "LA": "LA",
-    "LV": "LV",
-    "LB": "LB",
-    "LS": "LS",
-    "LR": "LR",
-    "LY": "LY",
-    "LI": "LI",
-    "LT": "LT",
-    "LU": "LU",
-    "MO": "MO",
-    "MK": "MK",
-    "MG": "MG",
-    "MW": "MW",
-    "MY": "MY",
-    "MV": "MV",
-    "ML": "ML",
-    "MT": "MT",
-    "MH": "MH",
-    "MQ": "MQ",
-    "MR": "MR",
-    "MU": "MU",
-    "YT": "YT",
-    "MX": "MX",
-    "FM": "FM",
-    "MD": "MD",
-    "MC": "MC",
-    "MN": "MN",
-    "ME": "ME",
-    "MS": "MS",
-    "MA": "MA",
-    "MZ": "MZ",
-    "MM": "MM",
-    "NA": "NA",
-    "NR": "NR",
-    "NP": "NP",
-    "NL": "NL",
-    "NC": "NC",
-    "NZ": "NZ",
-    "NI": "NI",
-    "NE": "NE",
-    "NG": "NG",
-    "NU": "NU",
-    "NF": "NF",
-    "KP": "KP",
-    "MP": "MP",
-    "NO": "NO",
-    "OM": "OM",
-    "PK": "PK",
-    "PW": "PW",
-    "PS": "PS",
-    "PA": "PA",
-    "PG": "PG",
-    "PY": "PY",
-    "PE": "PE",
-    "PH": "PH",
-    "PN": "PN",
-    "PL": "PL",
-    "PT": "PT",
-    "PR": "PR",
-    "QA": "QA",
-    "XK": "XK",
-    "RE": "RE",
-    "RO": "RO",
-    "RU": "RU",
-    "RW": "RW",
-    "BL": "BL",
-    "SH": "SH",
-    "KN": "KN",
-    "LC": "LC",
-    "MF": "MF",
-    "PM": "PM",
-    "VC": "VC",
-    "WS": "WS",
-    "SM": "SM",
-    "ST": "ST",
-    "SA": "SA",
-    "SN": "SN",
-    "RS": "RS",
-    "SC": "SC",
-    "SL": "SL",
-    "SG": "SG",
-    "SX": "SX",
-    "SK": "SK",
-    "SI": "SI",
-    "SB": "SB",
-    "SO": "SO",
-    "ZA": "ZA",
-    "GS": "GS",
-    "KR": "KR",
-    "SS": "SS",
-    "ES": "ES",
-    "LK": "LK",
-    "SD": "SD",
-    "SR": "SR",
-    "SJ": "SJ",
-    "SZ": "SZ",
-    "SE": "SE",
-    "CH": "CH",
-    "SY": "SY",
-    "TW": "TW",
-    "TJ": "TJ",
-    "TZ": "TZ",
-    "TH": "TH",
-    "TL": "TL",
-    "TG": "TG",
-    "TK": "TK",
-    "TO": "TO",
-    "TT": "TT",
-    "TN": "TN",
-    "TR": "TR",
-    "TM": "TM",
-    "TC": "TC",
-    "TV": "TV",
-    "UG": "UG",
-    "UA": "UA",
-    "AE": "AE",
-    "GB": "GB",
-    "US": "US",
-    "UY": "UY",
-    "UZ": "UZ",
-    "VU": "VU",
-    "VE": "VE",
-    "VN": "VN",
-    "WF": "WF",
-    "EH": "EH",
-    "YE": "YE",
-    "ZM": "ZM",
-    "ZW": "ZW",
-    
+var Cca2CodeMap = map[string]string{
+	"MR": "MR",
+	"AW": "AW",
+	"AR": "AR",
+	"SE": "SE",
+	"MV": "MV",
+	"MX": "MX",
+	"NZ": "NZ",
+	"EC": "EC",
+	"WF": "WF",
+	"AX": "AX",
+	"ME": "ME",
+	"PK": "PK",
+	"PN": "PN",
+	"ZM": "ZM",
+	"SC": "SC",
+	"MY": "MY",
+	"NO": "NO",
+	"UZ": "UZ",
+	"VU": "VU",
+	"TF": "TF",
+	"CX": "CX",
+	"SG": "SG",
+	"SR": "SR",
+	"EH": "EH",
+	"MF": "MF",
+	"CR": "CR",
+	"HM": "HM",
+	"IE": "IE",
+	"AQ": "AQ",
+	"AU": "AU",
+	"LY": "LY",
+	"QA": "QA",
+	"GL": "GL",
+	"MU": "MU",
+	"KZ": "KZ",
+	"IO": "IO",
+	"AL": "AL",
+	"BH": "BH",
+	"PG": "PG",
+	"BI": "BI",
+	"IN": "IN",
+	"UY": "UY",
+	"LC": "LC",
+	"BB": "BB",
+	"NC": "NC",
+	"LV": "LV",
+	"EE": "EE",
+	"NU": "NU",
+	"BL": "BL",
+	"PR": "PR",
+	"GD": "GD",
+	"MO": "MO",
+	"CY": "CY",
+	"IM": "IM",
+	"GR": "GR",
+	"SY": "SY",
+	"LT": "LT",
+	"CW": "CW",
+	"DM": "DM",
+	"NE": "NE",
+	"KG": "KG",
+	"TT": "TT",
+	"TG": "TG",
+	"PS": "PS",
+	"MG": "MG",
+	"HR": "HR",
+	"FO": "FO",
+	"HT": "HT",
+	"MS": "MS",
+	"CK": "CK",
+	"TL": "TL",
+	"MQ": "MQ",
+	"CU": "CU",
+	"TW": "TW",
+	"SZ": "SZ",
+	"UA": "UA",
+	"BM": "BM",
+	"KR": "KR",
+	"PE": "PE",
+	"IQ": "IQ",
+	"MD": "MD",
+	"SM": "SM",
+	"VE": "VE",
+	"GY": "GY",
+	"KY": "KY",
+	"KH": "KH",
+	"CC": "CC",
+	"MT": "MT",
+	"LK": "LK",
+	"IL": "IL",
+	"SD": "SD",
+	"VI": "VI",
+	"ER": "ER",
+	"ML": "ML",
+	"SO": "SO",
+	"NF": "NF",
+	"KM": "KM",
+	"NI": "NI",
+	"RU": "RU",
+	"UG": "UG",
+	"NR": "NR",
+	"CH": "CH",
+	"PT": "PT",
+	"TJ": "TJ",
+	"SS": "SS",
+	"BV": "BV",
+	"FM": "FM",
+	"AS": "AS",
+	"CZ": "CZ",
+	"BW": "BW",
+	"TN": "TN",
+	"AI": "AI",
+	"GW": "GW",
+	"SK": "SK",
+	"MH": "MH",
+	"DZ": "DZ",
+	"JM": "JM",
+	"MZ": "MZ",
+	"ES": "ES",
+	"HN": "HN",
+	"NL": "NL",
+	"ZA": "ZA",
+	"AZ": "AZ",
+	"MK": "MK",
+	"GM": "GM",
+	"LR": "LR",
+	"LU": "LU",
+	"CV": "CV",
+	"BS": "BS",
+	"GE": "GE",
+	"KI": "KI",
+	"TZ": "TZ",
+	"CN": "CN",
+	"GT": "GT",
+	"ST": "ST",
+	"DE": "DE",
+	"SL": "SL",
+	"TD": "TD",
+	"GB": "GB",
+	"SI": "SI",
+	"TH": "TH",
+	"ID": "ID",
+	"MP": "MP",
+	"GU": "GU",
+	"FI": "FI",
+	"YT": "YT",
+	"GI": "GI",
+	"TM": "TM",
+	"XK": "XK",
+	"CI": "CI",
+	"MA": "MA",
+	"DO": "DO",
+	"GH": "GH",
+	"VA": "VA",
+	"JE": "JE",
+	"TR": "TR",
+	"TV": "TV",
+	"IR": "IR",
+	"EG": "EG",
+	"DK": "DK",
+	"KE": "KE",
+	"BG": "BG",
+	"ZW": "ZW",
+	"AO": "AO",
+	"NG": "NG",
+	"PL": "PL",
+	"SN": "SN",
+	"SH": "SH",
+	"LB": "LB",
+	"WS": "WS",
+	"PH": "PH",
+	"GG": "GG",
+	"SV": "SV",
+	"KW": "KW",
+	"TO": "TO",
+	"OM": "OM",
+	"AF": "AF",
+	"KN": "KN",
+	"CF": "CF",
+	"RS": "RS",
+	"AM": "AM",
+	"BD": "BD",
+	"LA": "LA",
+	"CL": "CL",
+	"PF": "PF",
+	"PA": "PA",
+	"US": "US",
+	"NP": "NP",
+	"MM": "MM",
+	"FK": "FK",
+	"HU": "HU",
+	"PW": "PW",
+	"GQ": "GQ",
+	"GN": "GN",
+	"AE": "AE",
+	"TC": "TC",
+	"VG": "VG",
+	"LI": "LI",
+	"BA": "BA",
+	"MW": "MW",
+	"BT": "BT",
+	"CM": "CM",
+	"AD": "AD",
+	"GP": "GP",
+	"CG": "CG",
+	"RE": "RE",
+	"BF": "BF",
+	"JO": "JO",
+	"CD": "CD",
+	"TK": "TK",
+	"VN": "VN",
+	"SX": "SX",
+	"BE": "BE",
+	"UM": "UM",
+	"BR": "BR",
+	"BZ": "BZ",
+	"AG": "AG",
+	"PY": "PY",
+	"BJ": "BJ",
+	"BN": "BN",
+	"BO": "BO",
+	"DJ": "DJ",
+	"GF": "GF",
+	"CA": "CA",
+	"PM": "PM",
+	"JP": "JP",
+	"RW": "RW",
+	"VC": "VC",
+	"IS": "IS",
+	"BY": "BY",
+	"HK": "HK",
+	"LS": "LS",
+	"FJ": "FJ",
+	"AT": "AT",
+	"CO": "CO",
+	"GA": "GA",
+	"SA": "SA",
+	"GS": "GS",
+	"ET": "ET",
+	"BQ": "BQ",
+	"MC": "MC",
+	"KP": "KP",
+	"IT": "IT",
+	"NA": "NA",
+	"MN": "MN",
+	"SB": "SB",
+	"YE": "YE",
+	"RO": "RO",
+	"SJ": "SJ",
+	"FR": "FR",
 }
 
-var Alpha3CodeMap = map[string]string {
-    "AFG": "AF",
-    "ALA": "AX",
-    "ALB": "AL",
-    "DZA": "DZ",
-    "ASM": "AS",
-    "AND": "AD",
-    "AGO": "AO",
-    "AIA": "AI",
-    "ATA": "AQ",
-    "ATG": "AG",
-    "ARG": "AR",
-    "ARM": "AM",
-    "ABW": "AW",
-    "AUS": "AU",
-    "AUT": "AT",
-    "AZE": "AZ",
-    "BHS": "BS",
-    "BHR": "BH",
-    "BGD": "BD",
-    "BRB": "BB",
-    "BLR": "BY",
-    "BEL": "BE",
-    "BLZ": "BZ",
-    "BEN": "BJ",
-    "BMU": "BM",
-    "BTN": "BT",
-    "BOL": "BO",
-    "BES": "BQ",
-    "BIH": "BA",
-    "BWA": "BW",
-    "BVT": "BV",
-    "BRA": "BR",
-    "IOT": "IO",
-    "UMI": "UM",
-    "VGB": "VG",
-    "VIR": "VI",
-    "BRN": "BN",
-    "BGR": "BG",
-    "BFA": "BF",
-    "BDI": "BI",
-    "KHM": "KH",
-    "CMR": "CM",
-    "CAN": "CA",
-    "CPV": "CV",
-    "CYM": "KY",
-    "CAF": "CF",
-    "TCD": "TD",
-    "CHL": "CL",
-    "CHN": "CN",
-    "CXR": "CX",
-    "CCK": "CC",
-    "COL": "CO",
-    "COM": "KM",
-    "COG": "CG",
-    "COD": "CD",
-    "COK": "CK",
-    "CRI": "CR",
-    "HRV": "HR",
-    "CUB": "CU",
-    "CUW": "CW",
-    "CYP": "CY",
-    "CZE": "CZ",
-    "DNK": "DK",
-    "DJI": "DJ",
-    "DMA": "DM",
-    "DOM": "DO",
-    "ECU": "EC",
-    "EGY": "EG",
-    "SLV": "SV",
-    "GNQ": "GQ",
-    "ERI": "ER",
-    "EST": "EE",
-    "ETH": "ET",
-    "FLK": "FK",
-    "FRO": "FO",
-    "FJI": "FJ",
-    "FIN": "FI",
-    "FRA": "FR",
-    "GUF": "GF",
-    "PYF": "PF",
-    "ATF": "TF",
-    "GAB": "GA",
-    "GMB": "GM",
-    "GEO": "GE",
-    "DEU": "DE",
-    "GHA": "GH",
-    "GIB": "GI",
-    "GRC": "GR",
-    "GRL": "GL",
-    "GRD": "GD",
-    "GLP": "GP",
-    "GUM": "GU",
-    "GTM": "GT",
-    "GGY": "GG",
-    "GIN": "GN",
-    "GNB": "GW",
-    "GUY": "GY",
-    "HTI": "HT",
-    "HMD": "HM",
-    "VAT": "VA",
-    "HND": "HN",
-    "HKG": "HK",
-    "HUN": "HU",
-    "ISL": "IS",
-    "IND": "IN",
-    "IDN": "ID",
-    "CIV": "CI",
-    "IRN": "IR",
-    "IRQ": "IQ",
-    "IRL": "IE",
-    "IMN": "IM",
-    "ISR": "IL",
-    "ITA": "IT",
-    "JAM": "JM",
-    "JPN": "JP",
-    "JEY": "JE",
-    "JOR": "JO",
-    "KAZ": "KZ",
-    "KEN": "KE",
-    "KIR": "KI",
-    "KWT": "KW",
-    "KGZ": "KG",
-    "LAO": "LA",
-    "LVA": "LV",
-    "LBN": "LB",
-    "LSO": "LS",
-    "LBR": "LR",
-    "LBY": "LY",
-    "LIE": "LI",
-    "LTU": "LT",
-    "LUX": "LU",
-    "MAC": "MO",
-    "MKD": "MK",
-    "MDG": "MG",
-    "MWI": "MW",
-    "MYS": "MY",
-    "MDV": "MV",
-    "MLI": "ML",
-    "MLT": "MT",
-    "MHL": "MH",
-    "MTQ": "MQ",
-    "MRT": "MR",
-    "MUS": "MU",
-    "MYT": "YT",
-    "MEX": "MX",
-    "FSM": "FM",
-    "MDA": "MD",
-    "MCO": "MC",
-    "MNG": "MN",
-    "MNE": "ME",
-    "MSR": "MS",
-    "MAR": "MA",
-    "MOZ": "MZ",
-    "MMR": "MM",
-    "NAM": "NA",
-    "NRU": "NR",
-    "NPL": "NP",
-    "NLD": "NL",
-    "NCL": "NC",
-    "NZL": "NZ",
-    "NIC": "NI",
-    "NER": "NE",
-    "NGA": "NG",
-    "NIU": "NU",
-    "NFK": "NF",
-    "PRK": "KP",
-    "MNP": "MP",
-    "NOR": "NO",
-    "OMN": "OM",
-    "PAK": "PK",
-    "PLW": "PW",
-    "PSE": "PS",
-    "PAN": "PA",
-    "PNG": "PG",
-    "PRY": "PY",
-    "PER": "PE",
-    "PHL": "PH",
-    "PCN": "PN",
-    "POL": "PL",
-    "PRT": "PT",
-    "PRI": "PR",
-    "QAT": "QA",
-    "KOS": "XK",
-    "REU": "RE",
-    "ROU": "RO",
-    "RUS": "RU",
-    "RWA": "RW",
-    "BLM": "BL",
-    "SHN": "SH",
-    "KNA": "KN",
-    "LCA": "LC",
-    "MAF": "MF",
-    "SPM": "PM",
-    "VCT": "VC",
-    "WSM": "WS",
-    "SMR": "SM",
-    "STP": "ST",
-    "SAU": "SA",
-    "SEN": "SN",
-    "SRB": "RS",
-    "SYC": "SC",
-    "SLE": "SL",
-    "SGP": "SG",
-    "SXM": "SX",
-    "SVK": "SK",
-    "SVN": "SI",
-    "SLB": "SB",
-    "SOM": "SO",
-    "ZAF": "ZA",
-    "SGS": "GS",
-    "KOR": "KR",
-    "SSD": "SS",
-    "ESP": "ES",
-    "LKA": "LK",
-    "SDN": "SD",
-    "SUR": "SR",
-    "SJM": "SJ",
-    "SWZ": "SZ",
-    "SWE": "SE",
-    "CHE": "CH",
-    "SYR": "SY",
-    "TWN": "TW",
-    "TJK": "TJ",
-    "TZA": "TZ",
-    "THA": "TH",
-    "TLS": "TL",
-    "TGO": "TG",
-    "TKL": "TK",
-    "TON": "TO",
-    "TTO": "TT",
-    "TUN": "TN",
-    "TUR": "TR",
-    "TKM": "TM",
-    "TCA": "TC",
-    "TUV": "TV",
-    "UGA": "UG",
-    "UKR": "UA",
-    "ARE": "AE",
-    "GBR": "GB",
-    "USA": "US",
-    "URY": "UY",
-    "UZB": "UZ",
-    "VUT": "VU",
-    "VEN": "VE",
-    "VNM": "VN",
-    "WLF": "WF",
-    "ESH": "EH",
-    "YEM": "YE",
-    "ZMB": "ZM",
-    "ZWE": "ZW",
-    
+var Cca3CodeMap = map[string]string{
+	"MRT": "MR",
+	"ABW": "AW",
+	"ARG": "AR",
+	"SWE": "SE",
+	"MDV": "MV",
+	"MEX": "MX",
+	"NZL": "NZ",
+	"ECU": "EC",
+	"WLF": "WF",
+	"ALA": "AX",
+	"MNE": "ME",
+	"PAK": "PK",
+	"PCN": "PN",
+	"ZMB": "ZM",
+	"SYC": "SC",
+	"MYS": "MY",
+	"NOR": "NO",
+	"UZB": "UZ",
+	"VUT": "VU",
+	"ATF": "TF",
+	"CXR": "CX",
+	"SGP": "SG",
+	"SUR": "SR",
+	"ESH": "EH",
+	"MAF": "MF",
+	"CRI": "CR",
+	"HMD": "HM",
+	"IRL": "IE",
+	"ATA": "AQ",
+	"AUS": "AU",
+	"LBY": "LY",
+	"QAT": "QA",
+	"GRL": "GL",
+	"MUS": "MU",
+	"KAZ": "KZ",
+	"IOT": "IO",
+	"ALB": "AL",
+	"BHR": "BH",
+	"PNG": "PG",
+	"BDI": "BI",
+	"IND": "IN",
+	"URY": "UY",
+	"LCA": "LC",
+	"BRB": "BB",
+	"NCL": "NC",
+	"LVA": "LV",
+	"EST": "EE",
+	"NIU": "NU",
+	"BLM": "BL",
+	"PRI": "PR",
+	"GRD": "GD",
+	"MAC": "MO",
+	"CYP": "CY",
+	"IMN": "IM",
+	"GRC": "GR",
+	"SYR": "SY",
+	"LTU": "LT",
+	"CUW": "CW",
+	"DMA": "DM",
+	"NER": "NE",
+	"KGZ": "KG",
+	"TTO": "TT",
+	"TGO": "TG",
+	"PSE": "PS",
+	"MDG": "MG",
+	"HRV": "HR",
+	"FRO": "FO",
+	"HTI": "HT",
+	"MSR": "MS",
+	"COK": "CK",
+	"TLS": "TL",
+	"MTQ": "MQ",
+	"CUB": "CU",
+	"TWN": "TW",
+	"SWZ": "SZ",
+	"UKR": "UA",
+	"BMU": "BM",
+	"KOR": "KR",
+	"PER": "PE",
+	"IRQ": "IQ",
+	"MDA": "MD",
+	"SMR": "SM",
+	"VEN": "VE",
+	"GUY": "GY",
+	"CYM": "KY",
+	"KHM": "KH",
+	"CCK": "CC",
+	"MLT": "MT",
+	"LKA": "LK",
+	"ISR": "IL",
+	"SDN": "SD",
+	"VIR": "VI",
+	"ERI": "ER",
+	"MLI": "ML",
+	"SOM": "SO",
+	"NFK": "NF",
+	"COM": "KM",
+	"NIC": "NI",
+	"RUS": "RU",
+	"UGA": "UG",
+	"NRU": "NR",
+	"CHE": "CH",
+	"PRT": "PT",
+	"TJK": "TJ",
+	"SSD": "SS",
+	"BVT": "BV",
+	"FSM": "FM",
+	"ASM": "AS",
+	"CZE": "CZ",
+	"BWA": "BW",
+	"TUN": "TN",
+	"AIA": "AI",
+	"GNB": "GW",
+	"SVK": "SK",
+	"MHL": "MH",
+	"DZA": "DZ",
+	"JAM": "JM",
+	"MOZ": "MZ",
+	"ESP": "ES",
+	"HND": "HN",
+	"NLD": "NL",
+	"ZAF": "ZA",
+	"AZE": "AZ",
+	"MKD": "MK",
+	"GMB": "GM",
+	"LBR": "LR",
+	"LUX": "LU",
+	"CPV": "CV",
+	"BHS": "BS",
+	"GEO": "GE",
+	"KIR": "KI",
+	"TZA": "TZ",
+	"CHN": "CN",
+	"GTM": "GT",
+	"STP": "ST",
+	"DEU": "DE",
+	"SLE": "SL",
+	"TCD": "TD",
+	"GBR": "GB",
+	"SVN": "SI",
+	"THA": "TH",
+	"IDN": "ID",
+	"MNP": "MP",
+	"GUM": "GU",
+	"FIN": "FI",
+	"MYT": "YT",
+	"GIB": "GI",
+	"TKM": "TM",
+	"UNK": "XK",
+	"CIV": "CI",
+	"MAR": "MA",
+	"DOM": "DO",
+	"GHA": "GH",
+	"VAT": "VA",
+	"JEY": "JE",
+	"TUR": "TR",
+	"TUV": "TV",
+	"IRN": "IR",
+	"EGY": "EG",
+	"DNK": "DK",
+	"KEN": "KE",
+	"BGR": "BG",
+	"ZWE": "ZW",
+	"AGO": "AO",
+	"NGA": "NG",
+	"POL": "PL",
+	"SEN": "SN",
+	"SHN": "SH",
+	"LBN": "LB",
+	"WSM": "WS",
+	"PHL": "PH",
+	"GGY": "GG",
+	"SLV": "SV",
+	"KWT": "KW",
+	"TON": "TO",
+	"OMN": "OM",
+	"AFG": "AF",
+	"KNA": "KN",
+	"CAF": "CF",
+	"SRB": "RS",
+	"ARM": "AM",
+	"BGD": "BD",
+	"LAO": "LA",
+	"CHL": "CL",
+	"PYF": "PF",
+	"PAN": "PA",
+	"USA": "US",
+	"NPL": "NP",
+	"MMR": "MM",
+	"FLK": "FK",
+	"HUN": "HU",
+	"PLW": "PW",
+	"GNQ": "GQ",
+	"GIN": "GN",
+	"ARE": "AE",
+	"TCA": "TC",
+	"VGB": "VG",
+	"LIE": "LI",
+	"BIH": "BA",
+	"MWI": "MW",
+	"BTN": "BT",
+	"CMR": "CM",
+	"AND": "AD",
+	"GLP": "GP",
+	"COG": "CG",
+	"REU": "RE",
+	"BFA": "BF",
+	"JOR": "JO",
+	"COD": "CD",
+	"TKL": "TK",
+	"VNM": "VN",
+	"SXM": "SX",
+	"BEL": "BE",
+	"UMI": "UM",
+	"BRA": "BR",
+	"BLZ": "BZ",
+	"ATG": "AG",
+	"PRY": "PY",
+	"BEN": "BJ",
+	"BRN": "BN",
+	"BOL": "BO",
+	"DJI": "DJ",
+	"GUF": "GF",
+	"CAN": "CA",
+	"SPM": "PM",
+	"JPN": "JP",
+	"RWA": "RW",
+	"VCT": "VC",
+	"ISL": "IS",
+	"BLR": "BY",
+	"HKG": "HK",
+	"LSO": "LS",
+	"FJI": "FJ",
+	"AUT": "AT",
+	"COL": "CO",
+	"GAB": "GA",
+	"SAU": "SA",
+	"SGS": "GS",
+	"ETH": "ET",
+	"BES": "BQ",
+	"MCO": "MC",
+	"PRK": "KP",
+	"ITA": "IT",
+	"NAM": "NA",
+	"MNG": "MN",
+	"SLB": "SB",
+	"YEM": "YE",
+	"ROU": "RO",
+	"SJM": "SJ",
+	"FRA": "FR",
+}
+
+var CiocCodeMap = map[string]string{
+	"MTN": "MR",
+	"ARU": "AW",
+	"ARG": "AR",
+	"SWE": "SE",
+	"MDV": "MV",
+	"MEX": "MX",
+	"NZL": "NZ",
+	"ECU": "EC",
+
+	"MNE": "ME",
+
+	"PAK": "PK",
+
+	"ZAM": "ZM",
+
+	"SEY": "SC",
+
+	"MAS": "MY",
+
+	"NOR": "NO",
+
+	"UZB": "UZ",
+
+	"VAN": "VU",
+
+	"SGP": "SG",
+
+	"SUR": "SR",
+
+	"CRC": "CR",
+
+	"IRL": "IE",
+
+	"AUS": "AU",
+
+	"LBA": "LY",
+
+	"QAT": "QA",
+
+	"MRI": "MU",
+
+	"KAZ": "KZ",
+
+	"ALB": "AL",
+
+	"BRN": "BH",
+
+	"PNG": "PG",
+
+	"BDI": "BI",
+
+	"IND": "IN",
+
+	"URU": "UY",
+
+	"LCA": "LC",
+
+	"BAR": "BB",
+
+	"LAT": "LV",
+
+	"EST": "EE",
+
+	"PUR": "PR",
+
+	"GRN": "GD",
+
+	"CYP": "CY",
+
+	"GRE": "GR",
+
+	"SYR": "SY",
+
+	"LTU": "LT",
+
+	"DMA": "DM",
+
+	"NIG": "NE",
+
+	"KGZ": "KG",
+
+	"TTO": "TT",
+
+	"TOG": "TG",
+
+	"PLE": "PS",
+
+	"MAD": "MG",
+
+	"CRO": "HR",
+
+	"HAI": "HT",
+
+	"COK": "CK",
+
+	"TLS": "TL",
+
+	"CUB": "CU",
+
+	"TPE": "TW",
+
+	"SWZ": "SZ",
+
+	"UKR": "UA",
+
+	"BER": "BM",
+
+	"KOR": "KR",
+
+	"PER": "PE",
+
+	"IRQ": "IQ",
+
+	"MDA": "MD",
+
+	"SMR": "SM",
+
+	"VEN": "VE",
+
+	"GUY": "GY",
+
+	"CAY": "KY",
+
+	"CAM": "KH",
+
+	"MLT": "MT",
+
+	"SRI": "LK",
+
+	"ISR": "IL",
+
+	"SUD": "SD",
+
+	"ISV": "VI",
+
+	"ERI": "ER",
+
+	"MLI": "ML",
+
+	"SOM": "SO",
+
+	"COM": "KM",
+
+	"NCA": "NI",
+
+	"RUS": "RU",
+
+	"UGA": "UG",
+
+	"NRU": "NR",
+
+	"SUI": "CH",
+
+	"POR": "PT",
+
+	"TJK": "TJ",
+
+	"SSD": "SS",
+
+	"FSM": "FM",
+
+	"ASA": "AS",
+
+	"CZE": "CZ",
+
+	"BOT": "BW",
+
+	"TUN": "TN",
+
+	"GBS": "GW",
+
+	"SVK": "SK",
+
+	"MHL": "MH",
+
+	"ALG": "DZ",
+
+	"JAM": "JM",
+
+	"MOZ": "MZ",
+
+	"ESP": "ES",
+
+	"HON": "HN",
+
+	"NED": "NL",
+
+	"RSA": "ZA",
+
+	"AZE": "AZ",
+
+	"MKD": "MK",
+
+	"GAM": "GM",
+
+	"LBR": "LR",
+
+	"LUX": "LU",
+
+	"CPV": "CV",
+
+	"BAH": "BS",
+
+	"GEO": "GE",
+
+	"KIR": "KI",
+
+	"TAN": "TZ",
+
+	"CHN": "CN",
+
+	"GUA": "GT",
+
+	"STP": "ST",
+
+	"GER": "DE",
+
+	"SLE": "SL",
+
+	"CHA": "TD",
+
+	"GBR": "GB",
+
+	"SLO": "SI",
+
+	"THA": "TH",
+
+	"INA": "ID",
+
+	"GUM": "GU",
+
+	"FIN": "FI",
+
+	"TKM": "TM",
+
+	"KOS": "XK",
+
+	"CIV": "CI",
+
+	"MAR": "MA",
+
+	"DOM": "DO",
+
+	"GHA": "GH",
+
+	"TUR": "TR",
+
+	"TUV": "TV",
+
+	"IRI": "IR",
+
+	"EGY": "EG",
+
+	"DEN": "DK",
+
+	"KEN": "KE",
+
+	"BUL": "BG",
+
+	"ZIM": "ZW",
+
+	"ANG": "AO",
+
+	"NGR": "NG",
+
+	"POL": "PL",
+
+	"SEN": "SN",
+
+	"LBN": "LB",
+
+	"SAM": "WS",
+
+	"PHI": "PH",
+
+	"ESA": "SV",
+
+	"KUW": "KW",
+
+	"TGA": "TO",
+
+	"OMA": "OM",
+
+	"AFG": "AF",
+
+	"SKN": "KN",
+
+	"CAF": "CF",
+
+	"SRB": "RS",
+
+	"ARM": "AM",
+
+	"BAN": "BD",
+
+	"LAO": "LA",
+
+	"CHI": "CL",
+
+	"PAN": "PA",
+
+	"USA": "US",
+
+	"NEP": "NP",
+
+	"MYA": "MM",
+
+	"HUN": "HU",
+
+	"PLW": "PW",
+
+	"GEQ": "GQ",
+
+	"GUI": "GN",
+
+	"UAE": "AE",
+
+	"IVB": "VG",
+
+	"LIE": "LI",
+
+	"BIH": "BA",
+
+	"MAW": "MW",
+
+	"BHU": "BT",
+
+	"CMR": "CM",
+
+	"AND": "AD",
+
+	"CGO": "CG",
+
+	"BUR": "BF",
+
+	"JOR": "JO",
+
+	"COD": "CD",
+
+	"VIE": "VN",
+
+	"BEL": "BE",
+
+	"BRA": "BR",
+
+	"BIZ": "BZ",
+
+	"ANT": "AG",
+
+	"PAR": "PY",
+
+	"BEN": "BJ",
+
+	"BRU": "BN",
+
+	"BOL": "BO",
+
+	"DJI": "DJ",
+
+	"CAN": "CA",
+
+	"JPN": "JP",
+
+	"RWA": "RW",
+
+	"VIN": "VC",
+
+	"ISL": "IS",
+
+	"BLR": "BY",
+
+	"HKG": "HK",
+
+	"LES": "LS",
+
+	"FIJ": "FJ",
+
+	"AUT": "AT",
+
+	"COL": "CO",
+
+	"GAB": "GA",
+
+	"KSA": "SA",
+
+	"ETH": "ET",
+
+	"MON": "MC",
+
+	"PRK": "KP",
+
+	"ITA": "IT",
+
+	"NAM": "NA",
+
+	"MGL": "MN",
+
+	"SOL": "SB",
+
+	"YEM": "YE",
+
+	"ROU": "RO",
+
+	"FRA": "FR",
 }
 
 var SpecialCountryMap = map[string]string{
 	"GB-ENG": "GB-ENG",
-    "GB-SCT": "GB-SCT",
-    "GB-WLS": "GB-WLS",
-    
+	"GB-SCT": "GB-SCT",
+	"GB-WLS": "GB-WLS",
 }

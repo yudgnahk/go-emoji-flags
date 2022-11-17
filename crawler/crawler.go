@@ -35,7 +35,7 @@ var specialCountries = []dtos.SpecialCountry{
 
 func main() {
 
-	url := "https://restcountries.eu/rest/v2/all"
+	url := "https://restcountries.com/v3.1/all"
 	method := "GET"
 
 	client := &http.Client{}
@@ -58,7 +58,7 @@ func main() {
 		return
 	}
 
-	countries := make([]dtos.Country, 0)
+	countries := make([]dtos.CountryNew, 0)
 	_ = json.Unmarshal(body, &countries)
 
 	var countriesList = dtos.Data{
