@@ -26,9 +26,13 @@ func GetFlag(countryCode string) string {
 		if code, ok := CiocCodeMap[countryCode]; ok {
 			return string(0x1F1E6+rune(code[0])-'A') + string(0x1F1E6+rune(code[1])-'A') + "\u0020"
 		}
+
+		if flag, ok := SpecialEmojiMap[countryCode]; ok {
+			return flag
+		}
 	case 6:
-		if code, ok := SpecialCountryMap[countryCode]; ok {
-			return SpecialEmojiMap[code]
+		if flag, ok := SpecialEmojiMap[countryCode]; ok {
+			return flag
 		}
 	default:
 		return ""

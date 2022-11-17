@@ -55,6 +55,11 @@ func Test_getFlag(t *testing.T) {
 			args{""},
 			0,
 		},
+		{
+			"Could get England flag with short code",
+			args{"ENG"},
+			7,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
