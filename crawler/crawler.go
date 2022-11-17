@@ -20,16 +20,24 @@ var countryMapTemplate string
 
 var specialCountries = []dtos.SpecialCountry{
 	{
-		Name: "England",
-		Code: "GB-ENG",
+		Name:     "England",
+		Code:     "GB-ENG",
+		FlagCode: "GB-ENG",
 	},
 	{
-		Name: "Scotland",
-		Code: "GB-SCT",
+		Name:     "Scotland",
+		Code:     "GB-SCT",
+		FlagCode: "GB-SCT",
 	},
 	{
-		Name: "Wales",
-		Code: "GB-WLS",
+		Name:     "Wales",
+		Code:     "GB-WLS",
+		FlagCode: "GB-WLS",
+	},
+	{
+		Name:     "England Short",
+		Code:     "ENG",
+		FlagCode: "GB-ENG",
 	},
 }
 

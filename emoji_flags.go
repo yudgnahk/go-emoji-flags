@@ -5,9 +5,10 @@ import (
 )
 
 var SpecialEmojiMap = map[string]string{
-	EnglandCode:  "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-	ScotlandCode: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-	WalesCode:    "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+	EnglandCode:      "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+	ScotlandCode:     "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+	WalesCode:        "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+	EnglandShortCode: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
 }
 
 func GetFlag(countryCode string) string {

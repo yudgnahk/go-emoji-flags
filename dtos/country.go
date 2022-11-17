@@ -228,6 +228,7 @@ type CountryNew struct {
 }
 
 type SpecialCountry struct {
-	Name string
-	Code string
+	Name     string
+	Code     string
+	FlagCode string
 }

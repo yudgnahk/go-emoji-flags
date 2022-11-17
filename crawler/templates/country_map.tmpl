@@ -26,6 +26,6 @@ var CiocCodeMap = map[string]string {
 }
 
 var SpecialCountryMap = map[string]string{
-		{{range .SpecialCountries}}"{{.Code}}": "{{.Code}}",
+		{{range .SpecialCountries}}"{{.Code}}": "{{.FlagCode}}",
     {{end}}
 }

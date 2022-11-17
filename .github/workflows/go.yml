@@ -20,7 +20,7 @@ jobs:
         with:
           go-version: '^1.16' # The Go version to download (if necessary) and use.
       - name: Crawl Countries Data
-        run: go run ./crawler/crawler.go
+        run: go run ./crawler/crawler.go && gofmt -s -w .
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: generate country_map.go
