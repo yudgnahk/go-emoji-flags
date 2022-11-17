@@ -45,6 +45,16 @@ func Test_getFlag(t *testing.T) {
 			args{"GB-ENG"},
 			7,
 		},
+		{
+			"Could get CIOC code",
+			args{"GER"},
+			3,
+		},
+		{
+			"Return empty string if code is empty",
+			args{""},
+			0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
