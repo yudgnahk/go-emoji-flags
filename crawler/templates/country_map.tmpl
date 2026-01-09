@@ -29,3 +29,31 @@ var SpecialCountryMap = map[string]string{
 		{{range .SpecialCountries}}"{{.Code}}": "{{.FlagCode}}",
     {{end}}
 }
+
+// CountryNames maps ISO 3166-1 alpha-2 codes to country names
+var CountryNames = map[string]string{
+		{{range .Countries}}"{{.Cca2}}": "{{.Name.Common}}",
+		{{end}}
+		{{range .SpecialCountries}}"{{.Code}}": "{{.Name}}",
+		{{end}}
+}
+
+// CountryAliases maps common country aliases to ISO 3166-1 alpha-2 codes
+var CountryAliases = map[string]string{
+		// Common abbreviations and alternative names
+		"USA": "US",
+		"UK": "GB",
+		"UAE": "AE",
+		// Alternative spellings
+		"VIET NAM": "VN",
+		"BURMA": "MM",
+		"CZECHIA": "CZ",
+		"CZECH REPUBLIC": "CZ",
+		"RUSSIA": "RU",
+		"SOUTH KOREA": "KR",
+		"NORTH KOREA": "KP",
+		// Special subdivisions short codes
+		"ENGLAND": "GB-ENG",
+		"SCOTLAND": "GB-SCT",
+		"WALES": "GB-WLS",
+}

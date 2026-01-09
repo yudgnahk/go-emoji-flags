@@ -49,11 +49,12 @@ func GetFlag(countryCode string) string {
 // It searches for the closest match within all code maps (alpha-2, alpha-3, CIOC, and special codes).
 // Returns the flag and the matched code if a close match is found (distance <= 2), otherwise returns empty strings.
 // This is useful for handling typos or variations in country code input.
+// When multiple codes have the same distance, it prefers shorter codes for more intuitive results.
 //
 // Example:
 //
 //	flag, code := emojiflags.GetFlagFuzzy("VIETNM")  // Returns Vietnam flag and "VNM"
-//	flag, code := emojiflags.GetFlagFuzzy("USA")     // Returns US flag and "US"
+//	flag, code := emojiflags.GetFlagFuzzy("USA")     // Returns US flag and "USA"
 func GetFlagFuzzy(input string) (string, string) {
 	input = strings.ToUpper(input)
 
@@ -65,40 +66,45 @@ func GetFlagFuzzy(input string) (string, string) {
 	const maxDistance = 2
 	bestMatch := ""
 	bestDistance := maxDistance + 1
+	bestLength := 1000 // Prefer shorter codes
 
 	// Check alpha-2 codes
 	for code := range Cca2CodeMap {
 		dist := levenshtein(input, code)
-		if dist < bestDistance {
+		if dist < bestDistance || (dist == bestDistance && len(code) < bestLength) {
 			bestDistance = dist
 			bestMatch = code
+			bestLength = len(code)
 		}
 	}
 
 	// Check alpha-3 codes
 	for code := range Cca3CodeMap {
 		dist := levenshtein(input, code)
-		if dist < bestDistance {
+		if dist < bestDistance || (dist == bestDistance && len(code) < bestLength) {
 			bestDistance = dist
 			bestMatch = code
+			bestLength = len(code)
 		}
 	}
 
 	// Check CIOC codes
 	for code := range CiocCodeMap {
 		dist := levenshtein(input, code)
-		if dist < bestDistance {
+		if dist < bestDistance || (dist == bestDistance && len(code) < bestLength) {
 			bestDistance = dist
 			bestMatch = code
+			bestLength = len(code)
 		}
 	}
 
 	// Check special codes
 	for code := range SpecialEmojiMap {
 		dist := levenshtein(input, code)
-		if dist < bestDistance {
+		if dist < bestDistance || (dist == bestDistance && len(code) < bestLength) {
 			bestDistance = dist
 			bestMatch = code
+			bestLength = len(code)
 		}
 	}
 
@@ -156,4 +162,145 @@ func levenshtein(s1, s2 string) int {
 	}
 
 	return matrix[len(s1)][len(s2)]
+}
+
+// GetCode converts a flag emoji to its corresponding ISO 3166-1 alpha-2 country code.
+// Returns an empty string if the flag is not recognized.
+//
+// Example:
+//
+//	code := emojiflags.GetCode("🇻🇳")  // Returns "VN"
+//	code := emojiflags.GetCode("🏴󠁧󠁢󠁥󠁮󠁧󠁿")  // Returns "GB-ENG"
+func GetCode(flag string) string {
+	// Check special flags first
+	for code, emoji := range SpecialEmojiMap {
+		if emoji == flag {
+			return code
+		}
+	}
+
+	// Check if it's a standard flag emoji (two regional indicator symbols)
+	if len(flag) < 8 {
+		return ""
+	}
+
+	// Extract the two regional indicator symbols
+	runes := []rune(flag)
+	if len(runes) < 2 {
+		return ""
+	}
+
+	// Regional indicator symbols are in range 0x1F1E6-0x1F1FF
+	if runes[0] < 0x1F1E6 || runes[0] > 0x1F1FF || runes[1] < 0x1F1E6 || runes[1] > 0x1F1FF {
+		return ""
+	}
+
+	// Convert regional indicators back to alpha-2 code
+	char1 := rune('A') + (runes[0] - 0x1F1E6)
+	char2 := rune('A') + (runes[1] - 0x1F1E6)
+	code := string(char1) + string(char2)
+
+	// Verify the code exists in our map
+	if _, ok := Cca2CodeMap[code]; ok {
+		return code
+	}
+
+	return ""
+}
+
+// GetName converts a country code or flag emoji to its country name.
+// Supports ISO 3166-1 alpha-2, alpha-3, CIOC codes, and flag emojis.
+// Returns an empty string if not found.
+//
+// Example:
+//
+//	name := emojiflags.GetName("VN")    // Returns "Vietnam"
+//	name := emojiflags.GetName("VNM")   // Returns "Vietnam"
+//	name := emojiflags.GetName("🇻🇳")    // Returns "Vietnam"
+func GetName(input string) string {
+	input = strings.ToUpper(input)
+
+	// Try to get country name by code first
+	if name, ok := CountryNames[input]; ok {
+		return name
+	}
+
+	// If input looks like a flag emoji, convert to code first
+	if len(input) >= 8 {
+		code := GetCode(input)
+		if code != "" {
+			if name, ok := CountryNames[code]; ok {
+				return name
+			}
+		}
+	}
+
+	// Try alpha-3 codes
+	if len(input) == 3 {
+		if code, ok := Cca3CodeMap[input]; ok {
+			if name, ok := CountryNames[code]; ok {
+				return name
+			}
+		}
+		// Try CIOC codes
+		if code, ok := CiocCodeMap[input]; ok {
+			if name, ok := CountryNames[code]; ok {
+				return name
+			}
+		}
+	}
+
+	return ""
+}
+
+// GetFlagByName attempts to find a flag emoji by country name.
+// Supports exact matches and fuzzy matching for country names and common aliases.
+// Returns the flag emoji and matched code if found, empty strings otherwise.
+//
+// Example:
+//
+//	flag, code := emojiflags.GetFlagByName("Vietnam")     // Returns "🇻🇳", "VN"
+//	flag, code := emojiflags.GetFlagByName("United States") // Returns "🇺🇸", "US"
+func GetFlagByName(name string) (string, string) {
+	name = strings.ToUpper(name)
+
+	// Return empty for empty input
+	if name == "" {
+		return "", ""
+	}
+
+	// Try exact match first
+	for code, countryName := range CountryNames {
+		if strings.ToUpper(countryName) == name {
+			return GetFlag(code), code
+		}
+	}
+
+	// Try fuzzy matching with country names
+	const maxDistance = 2
+	bestMatch := ""
+	bestDistance := maxDistance + 1
+
+	for code, countryName := range CountryNames {
+		dist := levenshtein(name, strings.ToUpper(countryName))
+		if dist < bestDistance {
+			bestDistance = dist
+			bestMatch = code
+		}
+	}
+
+	// Also check common aliases in CountryAliases map
+	for alias, code := range CountryAliases {
+		dist := levenshtein(name, strings.ToUpper(alias))
+		if dist < bestDistance {
+			bestDistance = dist
+			bestMatch = code
+		}
+	}
+
+	if bestDistance <= maxDistance && bestMatch != "" {
+		return GetFlag(bestMatch), bestMatch
+	}
+
+	return "", ""
 }

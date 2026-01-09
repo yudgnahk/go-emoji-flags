@@ -1,6 +1,7 @@
 package emojiflags
 
 import (
+	"fmt"
 	"testing"
 	"unicode"
 	"unicode/utf8"
@@ -159,6 +160,63 @@ func Test_GetFlagFuzzy(t *testing.T) {
 			"VNM",
 			2,
 		},
+		// Edge cases
+		{
+			"Empty string finds some match",
+			args{""},
+			true, // Fuzzy matching finds a match at distance 2 (non-deterministic which one)
+			"",   // We don't test exact code match due to map iteration randomness
+			2,
+		},
+		{
+			"Single character finds match",
+			args{"V"},
+			true, // Fuzzy matching finds a 2-char code at distance 1
+			"",   // Non-deterministic which 2-char code starting with V
+			2,
+		},
+		{
+			"Very long invalid input",
+			args{"XXXXXXXXXXXXXXXXXX"},
+			false,
+			"",
+			0,
+		},
+		{
+			"Special characters with hyphen",
+			args{"GB-ENG"},
+			true,
+			"GB-ENG",
+			7,
+		},
+		{
+			"With space finds match",
+			args{"GB ENG"},
+			true, // Fuzzy matching finds GB-ENG at distance 1 (space becomes hyphen)
+			"GB-ENG",
+			7,
+		},
+		{
+			"Numeric input",
+			args{"123"},
+			false,
+			"",
+			0,
+		},
+		{
+			"Mixed case input",
+			args{"VnM"},
+			true,
+			"VNM",
+			2,
+		},
+		{
+			"Four character code finds match",
+			args{"VNAM"},
+			true, // distance 1 from multiple codes, non-deterministic
+			"",   // Don't test exact match
+			2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -168,7 +226,8 @@ func Test_GetFlagFuzzy(t *testing.T) {
 				if gotFlag == "" {
 					t.Errorf("GetFlagFuzzy() expected flag, got empty string")
 				}
-				if gotCode != tt.wantCode {
+				// Only check exact code match if wantCode is specified
+				if tt.wantCode != "" && gotCode != tt.wantCode {
 					t.Errorf("GetFlagFuzzy() code = %v, want %v", gotCode, tt.wantCode)
 				}
 				if !utf8.ValidString(gotFlag) {
@@ -210,4 +269,182 @@ func Test_levenshtein(t *testing.T) {
 			}
 		})
 	}
+}
+
+func Test_GetCode(t *testing.T) {
+	tests := []struct {
+		name     string
+		flag     string
+		wantCode string
+	}{
+		{"Vietnam flag", "🇻🇳", "VN"},
+		{"US flag", "🇺🇸", "US"},
+		{"Germany flag", "🇩🇪", "DE"},
+		{"England special flag", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "GB-ENG"},
+		{"Scotland special flag", "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "GB-SCT"},
+		{"Wales special flag", "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "GB-WLS"},
+		{"Invalid flag", "🎌", ""},
+		{"Empty string", "", ""},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := GetCode(tt.flag)
+			if got != tt.wantCode {
+				t.Errorf("GetCode() = %v, want %v", got, tt.wantCode)
+			}
+		})
+	}
+}
+
+func Test_GetName(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    string
+		wantName string
+	}{
+		{"From alpha-2 code", "VN", "Vietnam"},
+		{"From alpha-3 code", "VNM", "Vietnam"},
+		{"From CIOC code", "GER", "Germany"},
+		{"From flag emoji", "🇻🇳", "Vietnam"},
+		{"From special code", "GB-ENG", "England"},
+		{"Lowercase code", "vn", "Vietnam"},
+		{"Invalid code", "ZZZ", ""},
+		{"Empty string", "", ""},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := GetName(tt.input)
+			if got != tt.wantName {
+				t.Errorf("GetName() = %v, want %v", got, tt.wantName)
+			}
+		})
+	}
+}
+
+func Test_GetFlagByName(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    string
+		wantFlag bool
+		wantCode string
+	}{
+		{"Exact match Vietnam", "Vietnam", true, "VN"},
+		{"Exact match United States", "United States", true, "US"},
+		{"Exact match Germany", "Germany", true, "DE"},
+		{"Alias USA", "USA", true, "US"},
+		{"Alias UK", "UK", true, "GB"},
+		{"Alias UAE", "UAE", true, "AE"},
+		{"Fuzzy match Viet Nam", "Viet Nam", true, "VN"},
+		{"Special England", "England", true, "GB-ENG"},
+		{"Lowercase", "vietnam", true, "VN"},
+		{"Invalid name", "Notacountry", false, ""},
+		{"Empty string", "", false, ""},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotFlag, gotCode := GetFlagByName(tt.input)
+			if tt.wantFlag {
+				if gotFlag == "" {
+					t.Errorf("GetFlagByName() expected flag, got empty string")
+				}
+				if gotCode != tt.wantCode {
+					t.Errorf("GetFlagByName() code = %v, want %v", gotCode, tt.wantCode)
+				}
+			} else {
+				if gotFlag != "" || gotCode != "" {
+					t.Errorf("GetFlagByName() expected empty, got flag=%v, code=%v", gotFlag, gotCode)
+				}
+			}
+		})
+	}
+}
+
+func ExampleGetFlag() {
+	flag := GetFlag("VN")
+	fmt.Println(flag)
+	// Output: 🇻🇳
+}
+
+func ExampleGetFlag_threeLetterCode() {
+	flag := GetFlag("VNM")
+	fmt.Println(flag)
+	// Output: 🇻🇳
+}
+
+func ExampleGetFlag_ciocCode() {
+	flag := GetFlag("GER")
+	fmt.Println(flag)
+	// Output: 🇩🇪
+}
+
+func ExampleGetFlag_specialSubdivision() {
+	flag := GetFlag("GB-ENG")
+	fmt.Println(flag)
+	// Output: 🏴󠁧󠁢󠁥󠁮󠁧󠁿
+}
+
+func ExampleGetFlag_invalidCode() {
+	flag := GetFlag("INVALID")
+	fmt.Println(flag == "")
+	// Output: true
+}
+
+func ExampleGetFlagFuzzy() {
+	flag, code := GetFlagFuzzy("GERM")
+	fmt.Printf("Flag: %s, Code: %s\n", flag, code)
+	// Output: Flag: 🇩🇪, Code: GER
+}
+
+func ExampleGetFlagFuzzy_exactMatch() {
+	flag, code := GetFlagFuzzy("VNM")
+	fmt.Printf("Flag: %s, Code: %s\n", flag, code)
+	// Output: Flag: 🇻🇳, Code: VNM
+}
+
+func ExampleGetFlagFuzzy_variation() {
+	flag, code := GetFlagFuzzy("USA")
+	fmt.Printf("Flag: %s, Code: %s\n", flag, code)
+	// Output: Flag: 🇺🇸, Code: USA
+}
+
+func ExampleGetFlagFuzzy_tooFar() {
+	flag, code := GetFlagFuzzy("GERMANY")
+	fmt.Printf("Flag: %s, Code: %s\n", flag, code)
+	// Output: Flag: , Code:
+}
+
+func ExampleGetCode() {
+	code := GetCode("🇻🇳")
+	fmt.Println(code)
+	// Output: VN
+}
+
+func ExampleGetName() {
+	name := GetName("VN")
+	fmt.Println(name)
+	// Output: Vietnam
+}
+
+func ExampleGetName_threeLetterCode() {
+	name := GetName("VNM")
+	fmt.Println(name)
+	// Output: Vietnam
+}
+
+func ExampleGetName_fromFlag() {
+	name := GetName("🇻🇳")
+	fmt.Println(name)
+	// Output: Vietnam
+}
+
+func ExampleGetFlagByName() {
+	flag, code := GetFlagByName("Vietnam")
+	fmt.Printf("Flag: %s, Code: %s\n", flag, code)
+	// Output: Flag: 🇻🇳, Code: VN
+}
+
+func ExampleGetFlagByName_alias() {
+	flag, code := GetFlagByName("USA")
+	fmt.Printf("Flag: %s, Code: %s\n", flag, code)
+	// Output: Flag: 🇺🇸, Code: US
 }
