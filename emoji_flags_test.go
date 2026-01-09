@@ -199,8 +199,9 @@ func Test_levenshtein(t *testing.T) {
 		{"one substitution", "ABC", "ABD", 1},
 		{"empty strings", "", "", 0},
 		{"one empty", "ABC", "", 3},
-		{"complex", "VIETNM", "VNM", 3},
-		{"complex 2", "USA", "US", 1},
+		{"VIETNM to VNM", "VIETNM", "VNM", 3},
+		{"GERMANY to GER", "GERMANY", "GER", 4},
+		{"USA to US", "USA", "US", 1},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
