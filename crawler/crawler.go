@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -11,6 +11,9 @@ import (
 	"text/template"
 
 	_ "embed"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 
 	"github.com/yudgnahk/go-emoji-flags/dtos"
 )
@@ -43,7 +46,7 @@ var specialCountries = []dtos.SpecialCountry{
 
 func main() {
 
-	url := "https://restcountries.com/v3.1/all"
+	url := "https://restcountries.com/v3.1/all?fields=cca2,cca3,cioc,name"
 	method := "GET"
 
 	client := &http.Client{}
@@ -60,14 +63,17 @@ func main() {
 	}
 	defer res.Body.Close()
 
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	countries := make([]dtos.CountryNew, 0)
-	_ = json.Unmarshal(body, &countries)
+	if err = json.Unmarshal(body, &countries); err != nil {
+		fmt.Printf("error unmarshaling JSON: %v\n", err)
+		return
+	}
 
 	var countriesList = dtos.Data{
 		Countries:        countries,
@@ -82,7 +88,8 @@ func main() {
 func generateTemplate(layout string, data interface{}) error {
 	tmpl, err := template.New("tmpl").Funcs(template.FuncMap{
 		"format": func(s string) string {
-			s = strings.Title(strings.ToLower(s))
+			caser := cases.Title(language.English)
+			s = caser.String(strings.ToLower(s))
 
 			if colonIndex := strings.Index(s, ","); colonIndex > -1 {
 				s = s[:(colonIndex - 1)]
