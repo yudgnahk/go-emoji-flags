@@ -118,7 +118,7 @@ func Test_GetFlagFuzzy(t *testing.T) {
 			2,
 		},
 		{
-			"Should find GER from GERMANY",
+			"Should NOT find GER from GERMANY",
 			args{"GERMANY"},
 			false, // distance is 4, exceeds maxDistance threshold of 2
 			"",

@@ -46,6 +46,7 @@ var specialCountries = []dtos.SpecialCountry{
 
 func main() {
 
+	// Fetch country data with specific fields: cca2/cca3/cioc for code maps, name for generating constant names
 	url := "https://restcountries.com/v3.1/all?fields=cca2,cca3,cioc,name"
 	method := "GET"
 
