@@ -106,7 +106,7 @@ func Test_GetFlagFuzzy(t *testing.T) {
 		{
 			"Should find typo VIETNM (missing A)",
 			args{"VIETNM"},
-			false, // distance is 3, too far
+			false, // distance is 3, exceeds maxDistance threshold of 2
 			"",
 			0,
 		},
@@ -120,7 +120,7 @@ func Test_GetFlagFuzzy(t *testing.T) {
 		{
 			"Should find GER from GERMANY",
 			args{"GERMANY"},
-			false, // distance is 4, too far
+			false, // distance is 4, exceeds maxDistance threshold of 2
 			"",
 			0,
 		},
@@ -132,10 +132,10 @@ func Test_GetFlagFuzzy(t *testing.T) {
 			2,
 		},
 		{
-			"Should find code from GEE (distance 1)",
-			args{"GEE"},
+			"Should find FR from FRR (distance 1)",
+			args{"FRR"},
 			true,
-			"GE", // Georgia is closer (distance 1) - could also be EE (Estonia)
+			"FR", // France at distance 1 (delete one R) - unambiguous match
 			2,
 		},
 		{
