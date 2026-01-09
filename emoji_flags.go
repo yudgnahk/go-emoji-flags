@@ -54,7 +54,7 @@ func GetFlag(countryCode string) string {
 // Example:
 //
 //	flag, code := emojiflags.GetFlagFuzzy("VIETNM")  // Returns Vietnam flag and "VNM"
-//	flag, code := emojiflags.GetFlagFuzzy("USA")     // Returns US flag and "USA"
+//	flag, code := emojiflags.GetFlagFuzzy("USA")     // Also works when the input is already a valid code
 func GetFlagFuzzy(input string) (string, string) {
 	input = strings.ToUpper(input)
 
