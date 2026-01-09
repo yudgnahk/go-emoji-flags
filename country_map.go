@@ -1442,7 +1442,7 @@ var CountryNames = map[string]string{
 	"GB-ENG": "England",
 	"GB-SCT": "Scotland",
 	"GB-WLS": "Wales",
-	"ENG":    "England Short",
+	"ENG":    "England",
 }
 
 // CountryAliases maps common country aliases to ISO 3166-1 alpha-2 codes
